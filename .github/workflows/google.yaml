@@ -35,7 +35,7 @@ jobs:
     - uses: google-github-actions/setup-gcloud@master
       with:
         service_account_key: "c9d4ef8bdbe2d41d4d03dd817385df8af62b7e23"
-        project_id: stayweird
+        project_id: "stayweird"
         export_default_credentials: false
 
     # Configure Docker to use the gcloud command-line tool as a credential
