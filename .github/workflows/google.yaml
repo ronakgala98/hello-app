@@ -15,7 +15,7 @@ name: Build and Deploy to GKE
 on: push
 
 env:
-  PROJECT_ID: "stayweird"
+  PROJECT_ID: stayweird
   GKE_CLUSTER: hello-app-cluster    # TODO: update to cluster name
   GKE_ZONE: us-central1-c   # TODO: update to cluster zone
   DEPLOYMENT_NAME: gke-test # TODO: update to deployment name
@@ -34,9 +34,8 @@ jobs:
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@v0.2.0
       with:
-        service_account_key: "c9d4ef8bdbe2d41d4d03dd817385df8af62b7e23"
-        project_id: "stayweird"
-
+        service_account_key: c9d4ef8bdbe2d41d4d03dd817385df8af62b7e23
+        project_id: stayweird
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
@@ -48,7 +47,7 @@ jobs:
       with:
         cluster_name: ${{ env.GKE_CLUSTER }}
         location: ${{ env.GKE_ZONE }}
-        credentials: "c9d4ef8bdbe2d41d4d03dd817385df8af62b7e23"
+        credentials: c9d4ef8bdbe2d41d4d03dd817385df8af62b7e23
 
     # Build the Docker image
     - name: Build
